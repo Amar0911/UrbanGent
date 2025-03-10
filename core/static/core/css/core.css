@@ -1,7 +1,7 @@
 
 /*ressponsive*/
 
-/* For Large Screens (Desktops) */
+
 @media (max-width: 1200px) {
     body {
         font-size: 18px; 
@@ -9,7 +9,7 @@
     }
 }
 
-/* For Tablets (Portrait and Landscape) */
+
 @media (max-width: 768px) {
     body {
         font-size: 16px;
@@ -22,7 +22,7 @@
     }
 
     #navbarbtns {
-        display: block; /* Stack buttons vertically */
+        display: block; 
         text-align: center;
         margin-top: 10px;
     }
@@ -34,7 +34,7 @@
     }
 }
 
-/* For Mobile Devices (Small Screens) */
+
 @media (max-width: 576px) {
     body {
         font-size: 14px;
@@ -62,7 +62,7 @@
 
     #all, #shirts, #ttshirts, #tro {
         margin: 5px 0;
-        width: 100%; /* Make buttons full width on mobile */
+        width: 100%; 
         text-align: center;
     }
 
@@ -72,36 +72,34 @@
     }
 }
 
-/* Responsive for Tablets */
 @media (max-width: 768px) {
     .icon-container {
         margin-left: 50px;
         margin-right: 50px;
-        justify-content: center; /* Center-align on smaller screens */
+        justify-content: center; 
         gap: 10px;
     }
 
     .icon-item h3 {
-        font-size: 13px; /* Slightly smaller text */
+        font-size: 13px; 
     }
 }
 
-/* Responsive for Mobile Devices */
 @media (max-width: 576px) {
     .icon-container {
         margin-left: 10px;
         margin-right: 10px;
-        flex-direction: column; /* Stack items vertically */
+        flex-direction: column; 
         align-items: center;
-        gap: 15px; /* Space between items */
+        gap: 15px; 
     }
 
     .icon-item {
-        width: 100%; /* Full width on mobile */
+        width: 100%; 
     }
 
     .icon-item img {
-        width: 40px; /* Slightly smaller icons */
+        width: 40px; 
         height: 40px;
     }
 
@@ -404,14 +402,14 @@ border: none;
     justify-content: space-between;
     margin-left: 150px;
     margin-right: 150px;
-    gap: 20px; /* Space between icons */
-    flex-wrap: wrap; /* Allows wrapping on smaller screens */
+    gap: 20px; 
+    flex-wrap: wrap; 
 }
 
 .icon-item {
     text-align: center;
-    flex: 1; /* Makes items grow evenly */
-    min-width: 120px; /* Ensures icons don't get too small */
+    flex: 1; 
+    min-width: 120px; 
 }
 
 .icon-item img {
@@ -429,41 +427,8 @@ border: none;
 /*register*/
 
 
-.register-page {
-    background-image: url('asset/trending/black-man-wearing-suit-isolated_23-2151808530\ png.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
-    margin: 0;
-    padding: 0;
-    color: rgb(0, 0, 0);
-}
-.form-container {
-    box-shadow: 2px 2px 3px 0px rgb(0, 0, 0);
-    padding: 20px;
-    border-radius: 20px;
-    background: rgb(202, 185, 185);
-}
-.navbar {
-    background-color: transparent
-}
-.navbar-brand h1 {
-    color: white;
-    font-weight: 500;
-}
-.btn-outline-success {
-    border-color: #28a745;
-    color: #28a745;
-}
-.btn-outline-success:hover {
-    background-color: #28a745;
-    color: white;
-}
-a {
-    color: rgb(0, 0, 0);
-}
 
-/*trending*/
+
 
 
 
