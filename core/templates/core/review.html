@@ -1,13 +1,121 @@
 {% load static %}
-<div class="container my-5" style="">
-    <br>
+
+<style>
+
+    
+    .review {
+        max-width: 1200px;
+        margin: auto;
+        padding: 20px;
+    }
+    
+    .review-row {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: stretch;
+        gap: 10px;
+    }
+    
+    /* Review Cards */
+    .review-card {
+        border-radius: 10px;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease-in-out;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    
+    .review-card:hover {
+        transform: scale(1.05);
+    }
+    
+    /* Review Body */
+    .review-body {
+        padding: 10px;
+        text-align: center;
+    }
+    
+    /* Star Icons */
+    .text-warning i {
+        color: #ffcc00;
+    }
+    
+    /* Responsive Adjustments */
+    @media (max-width: 576px) {  
+        .review-form {
+            max-width: 100%;
+            margin: auto;
+        }
+    
+        .review-card {
+            margin-bottom: 20px;
+        }
+    
+        .review-row {
+            flex-direction: column;
+        }
+    }
+    
+    @media (min-width: 768px) {  
+        .review-form {
+            max-width: 48%;
+        }
+    }
+    
+    @media (min-width: 992px) { 
+        .review-form {
+            max-width: 32%;
+        }
+    }
+    
+</style>
+
+<!-- Customer Reviews Section -->
+<div class="container my-5 review">
     <h3 class="text-center mb-4">Customer Reviews</h3>
-    <div class="row">
-       
-        <div class="col-md-4 mb-4">
-            <div class="card h-100 shadow-sm">
-                <div class="card-body text-center">
-                  <i class="bi bi-person-fill-check" style="font-size: 2.5rem;"></i>
+
+    <div class="review-row">
+
+        <div class="col-12 mb-4 review-form">
+            <div class="card h-100 shadow-sm review-card">
+                <div class="review-body">
+                    <i class="bi bi-person-fill-check" style="font-size: 2.5rem;"></i>  
+                    <h5 class="card-title">Aakash Soni</h5>
+                    <p class="text-muted">"Fast delivery and great packaging. Will definitely shop here again!"</p>
+                    <p class="text-warning">
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-half"></i>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-12 mb-4 review-form">
+            <div class="card h-100 shadow-sm review-card">
+                <div class="review-body">
+                    <i class="bi bi-person-fill-check" style="font-size: 2.5rem;"></i>
+                    <h5 class="card-title">Abhishek More</h5>
+                    <p class="text-muted">"High-quality materials and perfect fit. UrbanGent never disappoints!"</p>
+                    <p class="text-warning">
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-12 mb-4 review-form">
+            <div class="card h-100 shadow-sm review-card">
+                <div class="review-body">
+                    <i class="bi bi-person-fill-check" style="font-size: 2.5rem;"></i>
                     <h5 class="card-title">Aashay Pariskar</h5>
                     <p class="text-muted">"Absolutely love the quality of these shirts! Super comfortable and stylish."</p>
                     <p class="text-warning">
@@ -21,38 +129,5 @@
             </div>
         </div>
         
-        <div class="col-md-4 mb-4">
-            <div class="card h-100 shadow-sm">
-                <div class="card-body text-center">
-                  <i class="bi bi-person-fill-check" style="font-size: 2.5rem;"></i>  
-                    <h5 class="card-title">Aakash Soni</h5>
-                    <p class="text-muted">"Fast delivery and great packaging. Will definitely shop here again!"</p>
-                    <p class="text-warning">
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-half"></i>
-                    </p>
-                </div>
-            </div>
-        </div>
-      
-        <div class="col-md-4 mb-4">
-            <div class="card h-100 shadow-sm">
-                <div class="card-body text-center">
-                  <i class="bi bi-person-fill-check" style="font-size: 2.5rem;"></i>
-                    <h5 class="card-title">Abhishek More</h5>
-                    <p class="text-muted">"High-quality materials and perfect fit. UrbanGent never disappoints!"</p>
-                    <p class="text-warning">
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-fill"></i>
-                    </p>
-                </div>
-            </div>
-        </div>
     </div>
 </div>

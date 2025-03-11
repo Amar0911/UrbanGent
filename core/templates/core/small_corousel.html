@@ -1,288 +1,139 @@
-{% load static %}
+    {% load static %}
 
-<style>
-
-
-    /*ressponsive*/
-
-    /* For Large Screens (Desktops) */
-    @media (max-width: 1200px) {
-        body {
-            font-size: 18px; 
-            padding: 15px;
-        }
-    }
-    
-    /* For Tablets (Portrait and Landscape) */
-    @media (max-width: 768px) {
-        body {
-            font-size: 16px;
-            padding: 10px;
-        }
-    
-        #logo {
-            font-size: 24px;
-            text-align: center;
-        }
-    
-        #navbarbtns {
-            display: block; /* Stack buttons vertically */
-            text-align: center;
-            margin-top: 10px;
-        }
-    
-        #smallcard {
-            width: 100%;
-            height: auto;
-            margin-right: 0;
-        }
-    }
-    
-    /* For Mobile Devices (Small Screens) */
-    @media (max-width: 576px) {
-        body {
-            font-size: 14px;
-            padding: 5px;
-        }
-    
-        #logo {
-            font-size: 20px;
-        }
-    
-        #navbarbtns {
-            font-size: 16px;
-        }
-    
-        #arrow-icon, #arrowi, #arrowii {
-            margin-left: 0; 
-            display: block;
-            text-align: center;
-        }
-    
-        #img, #img2 {
-            width: 100%;
-            height: auto;
-        }
-    
-        #all, #shirts, #ttshirts, #tro {
-            margin: 5px 0;
-            width: 100%; /* Make buttons full width on mobile */
-            text-align: center;
-        }
-    
-        #sbc {
-            margin-left: 0;
-            text-align: center;
-        }
-    }
-    
-    /* Responsive for Tablets */
-    @media (max-width: 768px) {
-        .icon-container {
-            margin-left: 50px;
-            margin-right: 50px;
-            justify-content: center; /* Center-align on smaller screens */
-            gap: 10px;
-        }
-    
-        .icon-item h3 {
-            font-size: 13px; /* Slightly smaller text */
-        }
-    }
-    
-    /* Responsive for Mobile Devices */
-    @media (max-width: 576px) {
-        .icon-container {
-            margin-left: 10px;
-            margin-right: 10px;
-            flex-direction: column; /* Stack items vertically */
-            align-items: center;
-            gap: 15px; /* Space between items */
-        }
-    
-        .icon-item {
-            width: 100%; /* Full width on mobile */
-        }
-    
-        .icon-item img {
-            width: 40px; /* Slightly smaller icons */
-            height: 40px;
-        }
-    
-        .icon-item h3 {
-            font-size: 12px;
-        }
-    }
-    
-    body {
-        overflow-x: hidden;
-        margin: 0;
-        padding: 0;
-        font-family: Arial, sans-serif;
-    }
-
-
-
-    #smallcard{
-        height: 700px;
-       width: 150px;
-        margin-right: 100px;
-        
-    }
-    .carousel-margin {
-        margin-right: 50px !important; 
-    }
-    
-    #smallcard:hover {
-        transform: scale(1.04);
-        transition: transform 0.3s ease-out;
-    }
-    
-    
-    .item {
-        opacity: 0; 
-        transition: opacity 0.2s ease-in-out; 
-    }
-    
-    .active {
-        opacity: 1; 
-    }
-    
-    
-    #featureitem{
-        color: rgb(133, 117, 117);
-        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-        margin-top: 50px;
-        margin-left: 120px;
-    }
-    
-    #classy{
-        color: black;
-        font-family:serif;
-        margin-left: 122px;
-        margin-right: 100px;
-        
-    }
-    
-    #line{
-     margin-left: 122px;
-     margin-right: 100px;
-     color: black;
-    }
-    
-    .oneside{
-        text-decoration: none;
-    }
-    
-    #shy{
-        margin-left: 122px;
-        text-decoration: none;
-        display: inline-block;
-        color: black;
-        font-family: serif;
-    }
-    #arrow-icon {
-        margin-left: 440px; 
-        font-size: 15px; 
-        vertical-align: middle; 
-        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-        color: black;
-    }
-    
-    #arrowi{
-        margin-left: 300px; 
-        font-size: 15px; 
-        vertical-align: middle; 
-        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-        color: black;
-    }
-    
-    #arrowii{
-        margin-left: 415px; 
-        font-size: 15px; 
-        vertical-align: middle; 
-        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-        color: black;
-    }
-    
-    
-    
-    #shy:hover{
-        transform: scale(1.05);
-        transition: transform 0.2s ease-in-out;
-        color: red;
-    }
-    
-    #arrowii:hover{
-        transform: scale(1.10);
-        transition: transform 0.5s ease-in-out;
-        color: deeppink;
-       
-    }
-    
-    #arrow-icon:hover{
-        transform: scale(1.10);
-        transition: transform 0.5s ease-in-out;
-        color: deeppink;
-    }
-    
-    #arrowi:hover{
-        transform: scale(1.10);
-        transition: transform 0.5s ease-in-out;
-        color: deeppink;
-       
-    }
-    
-    
-</style>
-<div class="row" style="background-color: rgb(250, 246, 246)">
-              
-    <div class="col-md-6">
-      <h5 id="featureitem">FEATURED ITEMS</h5>
-      
-      <h2 id="classy">Bold, classy, on-trend and a must-have for your wardrobe!</h2>
-      <br>
-      <br>
-      <br>
-      <br>
-      <div class="inside">
-      <hr id="line">
-      <a href="{% url "shirt" %}" class="oneside"><h5 id="shy">Shirts</h5> <i class="bi bi-arrow-up-right" id="arrow-icon"></i></a>
-      <hr id="line">
-      <a href="" class="oneside"><h5 id="shy">4-Way Strech Trousers</h5> <i class="bi bi-arrow-up-right" id="arrowi"></i></a>
-      <hr id="line">
-      <a href="{% url "Tshirt" %}" class="oneside"><h5 id="shy">T-Shirts</h5> <i class="bi bi-arrow-up-right" id="arrowii"></i></a>
-      <hr id="line">
-    </div>
-  </div>
-  <!--asset/images/front-view-sad-boy-holding-ball-school.jpg-->
+    <style>
+      .sm-car {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: center;
+          align-items: center;
+          width: 100%;
+          max-width: 100%;
+          margin: 0 auto;
+          padding: 20px;
+      }
   
-      <div class="col-md-5 carousel-margin"> <!-- Apply custom class -->
-        <div id="carouselExample" class="carousel slide">
-            <div class="carousel-inner">
-                <div class="carousel-item active" id="active">
-                    <img src="https://www.westside.com/cdn/shop/files/300996823OFFWHITE_3.jpg?v=1731565858&width=493" class="d-block w-100" alt="REDFLAME" id="smallcard">
-                </div>
-                <div class="carousel-item" id="item">
-                    <img src="https://www.westside.com/cdn/shop/files/300988322SAGE_1.jpg?v=1731565739&width=493" class="d-block w-100" alt="REDFLAME" id="smallcard">
-                </div>
-                <div class="carousel-item" id="item">
-                  <img src="https://www.westside.com/cdn/shop/files/300988322BEIGE_1.jpg?v=1731601442&width=493" class="d-block w-100" alt="REDFLAME" id="smallcard">
-              </div>
-                
+      .col-md-6, .col-md-5 {
+          flex: 1;
+          padding: 20px;
+          text-align: center;
+      }
+  
+      .carousel-inner .car-car {
+          width: 100%;
+          max-width: 100%;
+          height: auto;
+          border-radius: 10px;
+      }
+  
+      .inside a {
+          text-decoration: none;
+          color: black;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding: 10px;
+          font-weight: bold;
+      }
+  
+      .inside hr {
+          margin: 10px 0;
+      }
+  
+      /* Responsive Design */
+      @media (max-width: 992px) {
+          .sm-car {
+              flex-direction: column;
+              text-align: center;
+          }
+  
+          .col-md-6, .col-md-5 {
+              width: 100%;
+              padding: 10px;
+          }
+  
+          .carousel-inner .car-car {
+              height: auto;
+          }
+      }
+  
+      @media (max-width: 576px) {
+          .inside a {
+              font-size: 1rem;
+              padding: 8px;
+          }
+  
+          .carousel-control-prev, .carousel-control-next {
+              width: 10%;
+          }
+
+          .carousel-inner .car-car {
+            height: auto;
+        }
+      }
+
+      .carousel-inner .car-car {
+        width: 100%;
+        height: 500px;
+    }
+  
+    @media (max-width: 992px) {
+        .carousel-inner .car-car {
+            height: auto;
+        }
+    }
+  
+    @media (max-width: 768px) {
+        .carousel-inner .car-car {
+            height: auto;
+        }
+    }
+  
+    @media (max-width: 576px) {
+        .carousel-inner .car-car {
+            height: auto;
+        }
+    }
+  </style>
+  
+
+    <div class="row sm-car">
+        <div class="col-md-6">
+            <h5 id="featureitem" style="font-weight: 900;" >FEATURED ITEMS</h5>
+            <br>
+            <h2 id="classy">Bold, classy, on-trend and a must-have for your wardrobe!</h2>
+            <br><br><br>
+            <div class="inside">
+                <hr>
+                <a href="{% url 'shirt' %}" class="oneside"><h5 id="shy">Shirts</h5> <i class="bi bi-arrow-up-right"></i></a>
+                <hr>
+                <a href="#" class="oneside"><h5 id="oneside">Trousers</h5> <i class="bi bi-arrow-up-right"></i></a>
+                <hr>
+                <a href="{% url 'Tshirt' %}" class="oneside"><h5 id="shy">T-Shirts</h5> <i class="bi bi-arrow-up-right"></i></a>
+                <hr>
             </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-            </button>
+        </div>
+
+        <div class="col-md-5 carousel-margin">
+            <div id="carouselExample" class="carousel slide">
+                <div class="carousel-inner">
+                    <div class="carousel-item active ">
+                        <img src="https://www.westside.com/cdn/shop/files/300996823OFFWHITE_3.jpg?v=1731565858&width=493" class="car-car" alt="Product Image">
+                    </div>
+                    <div class="carousel-item ">
+                        <img src="https://www.westside.com/cdn/shop/files/300988322SAGE_1.jpg?v=1731565739&width=493" class="car-car"  alt="Product Image">
+                    </div>
+                    <div class="carousel-item ">
+                        <img src="https://www.westside.com/cdn/shop/files/300988322BEIGE_1.jpg?v=1731601442&width=493" class="car-car"  alt="Product Image">
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
         </div>
     </div>
-  </div>
-  <br>
-  <br>
-              
-    

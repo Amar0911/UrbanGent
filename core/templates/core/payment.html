@@ -4,13 +4,107 @@
 
 {% block content %}
 
+<style>
+    /* Background */
+    .container {
+        background-color: #f8f9fa;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    }
 
+    /* Payment Dropdown */
+    .form-select {
+        border-radius: 8px;
+        padding: 10px;
+        border: 2px solid #ddd;
+        transition: all 0.3s ease;
+    }
+
+    .form-select:focus {
+        border-color: #6c63ff;
+        box-shadow: 0px 4px 8px rgba(108, 99, 255, 0.2);
+    }
+
+    /* Card Details Section */
+    #card-details {
+        border: 2px solid #ddd;
+        border-radius: 12px;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.05);
+        padding: 20px;
+        transition: all 0.3s ease;
+    }
+
+    #card-details:hover {
+        box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    .form-control {
+        border-radius: 8px;
+        padding: 10px;
+        border: 2px solid #ddd;
+        transition: border 0.3s ease;
+    }
+
+    .form-control:focus {
+        border-color: #6c63ff;
+        box-shadow: 0px 4px 10px rgba(108, 99, 255, 0.2);
+    }
+
+    /* UPI Section */
+    .upi-section {
+        background: #ffffff;
+        border-radius: 12px;
+        padding: 15px;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        transition: all 0.3s ease;
+    }
+
+    .upi-section:hover {
+        box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    .upi-logo {
+        max-width: 50px;
+        height: auto;
+    }
+
+    .upi-payment {
+        font-weight: bold;
+        font-size: 18px;
+        color: #333;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+        .container {
+            padding: 20px;
+        }
+        
+        .form-control {
+            padding: 8px;
+        }
+
+        .upi-section {
+            flex-direction: column;
+            text-align: center;
+        }
+
+        .upi-logo {
+            margin-bottom: 10px;
+        }
+    }
+</style>
+
+<br>
 <div class="container mb-5">
     <h2 class="text-center mb-4">Choose Payment Method</h2>
     <form>
-        
         <div class="mb-3">
-            <label for="payment-method" class="form-label"><strong>Select Payment Method</strong> </label>
+            <label for="payment-method" class="form-label"><strong>Select Payment Method</strong></label>
             <select id="payment-method" class="form-select">
                 <option value="credit-card">PayPal</option>
                 <option value="debit-card">Debit Card</option>
@@ -18,8 +112,7 @@
             </select>
         </div>
 
-      
-        <div id="card-details" class="border p-4 rounded-3 bg-light mt-3">
+        <div id="card-details" class="mt-3">
             <h5>Enter Card Details</h5>
             <div class="row g-3">
                 <div class="col-md-6">
@@ -41,18 +134,16 @@
             </div>
         </div>
     </form>
+
     <br>
-    <div class="d-flex align-items-center">
-        <strong class="me-2">UPI PAYMENT :</strong>
-        
-        <div>{{paypal.render}}</div>
+
+    <!-- UPI Payment Section -->
+    <div class="upi-section">
+        <strong class="upi-payment">UPI PAYMENT:</strong>
+        <div>
+            {{ paypal.render }}
+        </div>
     </div>
 </div>
-</div>
-
-
-
-
-
 
 {% endblock content %}

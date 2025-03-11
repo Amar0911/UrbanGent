@@ -1,60 +1,144 @@
 {% load static %}
-<div class="container-fluid" style="color: black; background-color: rgb(250, 246, 246); width: calc(100vw - 80px); padding: 10px; margin: 0 40px; max-width: none;"> 
-    <footer class="py-5">
-        <div class="row">
-            <div class="col-6 col-md-2 mb-3">
-                <h5>Terms & Policies</h5>
-                <ul class="nav flex-column">
-                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary" style="color: grey;">Privacy Policy</a></li>
-                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary" style="color: grey;">Terms of Service</a></li>
-                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary" style="color: grey;">Request Return/Exchange</a></li>
-                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary" style="color: grey;">Return Policy</a></li>
-                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary" style="color: grey;">Blogs</a></li>
-                </ul>
-            </div>
-            
-            <div class="col-6 col-md-2 mb-3">
-                <h5>Company Info</h5>
-                <ul class="nav flex-column">
-                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary" style="color: gray;">Shipping Info</a></li>
-                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary" style="color: gray;">Payment Policy</a></li>
-                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary" style="color: gray;">Contact Us</a></li>
-                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary" style="color: gray;">Track Order</a></li>
-                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary" style="color: gray;">SiteMap</a></li>
-                </ul>
-            </div>
-            
-            <div class="col-6 col-md-2 mb-3">
-                <h5>Brands by Amar</h5>
-                <ul class="nav flex-column">
-                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary" style="color: gray;">UrbanGent</a></li>
-                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary" style="color: gray;">Snitch</a></li>
-                  
-                </ul>
-            </div>
-            
-            <div class="col-md-5 offset-md-1 mb-3">
-                <form>
-                    <h5>Subscribe now for special offers</h5>
-                   <br>
-                    <div class="d-flex flex-column flex-sm-row w-100 gap-2">
-                        <label for="newsletter1" class="visually-hidden">Email address</label>
-                        <input id="newsletter1" type="text" class="form-control" placeholder="Email address">
-                        <button class="btn btn-warning" type="button">Subscribe</button>
-                    </div>
-                    <br>
-                    <p>Want exclusive offers and first access to products? Sign up for email alerts.</p>
-                </form>
-            </div>
-        </div>
-        
-        <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top">
-            <p>&copy; 2024 AS-Company, Inc. All rights reserved.</p>
-            <ul class="list-unstyled d-flex">
-               <li><a href="https://www.instagram.com/" target="_blank" class="me-3"><i class="bi bi-instagram"></i></a></li>
-               <li><a href="https://www.facebook.com/login.php/" target="_blank" class="me-3"><i class="bi bi-facebook"></i></i></a></li>
-               <li><a href="https://x.com/?lang=en&mx=2" target="_blank" class="me-3"><i class="bi bi-twitter-x"></i></a></li>
-            </ul>
-        </div>
-    </footer>
+<style>
+  
+  .footer-container {
+    color: black;
+    background-color: rgb(250, 246, 246);
+    width: 100%;
+    max-width: 100vw;
+    padding: 20px;
+    margin: 0 auto;
+    overflow: hidden;
+  }
+
+
+  .footer-container h5 {
+    font-weight: bold;
+    color: black;
+  }
+
+
+  .footer-container .nav-link {
+    color: gray;
+    font-size: 14px;
+    transition: color 0.3s ease-in-out;
+  }
+
+  .footer-container .nav-link:hover {
+    color: black;
+    text-decoration: underline;
+  }
+
+
+  .subscribe-input {
+    border-radius: 5px;
+    padding: 10px;
+    width: 100%;
+  }
+
+  .subscribe-button {
+    background-color: #ffc107;
+    border: none;
+    padding: 10px 20px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+
+  .subscribe-button:hover {
+    background-color: #e0a800;
+  }
+
+  /* Social Media Icons */
+  .social-icons a {
+    font-size: 1.5rem;
+    color: black;
+    margin-right: 15px;
+    transition: transform 0.3s ease-in-out, color 0.3s;
+  }
+
+  .social-icons a:hover {
+    transform: scale(1.2);
+    color: red;
+  }
+
+
+  @media (max-width: 768px) {
+    .footer-container {
+      width: 100%;
+      margin: 0;
+      padding: 20px;
+    }
+
+    .footer-container .row {
+      text-align: center;
+    }
+
+    .footer-container .col-md-5 {
+      margin-top: 20px;
+    }
+
+    .social-icons {
+      justify-content: center;
+    }
+  }
+</style>
+
+<!-- Footer -->
+<div class="container-fluid footer-container">
+  <footer class="py-5">
+    <div class="row">
+      <div class="col-6 footer-policy mb-3">
+        <h5>Terms & Policies</h5>
+        <ul class="nav flex-column">
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0">Privacy Policy</a></li>
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0">Terms of Service</a></li>
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0">Request Return/Exchange</a></li>
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0">Return Policy</a></li>
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0">Blogs</a></li>
+        </ul>
+      </div>
+
+      <div class="col-6 footer-info mb-3">
+        <h5>Company Info</h5>
+        <ul class="nav flex-column">
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0">Shipping Info</a></li>
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0">Payment Policy</a></li>
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0">Contact Us</a></li>
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0">Track Order</a></li>
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0">SiteMap</a></li>
+        </ul>
+      </div>
+
+      <div class="col-6 footer-brand mb-3">
+        <h5>Brands by Amar</h5>
+        <ul class="nav flex-column">
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0">UrbanGent</a></li>
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0">Snitch</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-mail mb-3">
+        <form>
+          <h5>Subscribe now for special offers</h5>
+          <br>
+          <div class="d-flex flex-column flex-sm-row w-100 gap-2">
+            <input id="newsletter1" type="text" class="form-control subscribe-input" placeholder="Email address">
+            <button class="btn subscribe-button" type="button">Subscribe</button>
+          </div>
+          <br>
+          <p>Want exclusive offers and first access to products? Sign up for email alerts.</p>
+        </form>
+      </div>
+    </div>
+
+    <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top">
+      <p>&copy; 2024 AS-Company, Inc. All rights reserved.</p>
+      <ul class="list-unstyled d-flex social-icons">
+        <li><a href="https://www.instagram.com/" target="_blank"><i class="bi bi-instagram"></i></a></li>
+        <li><a href="https://www.facebook.com/login.php/" target="_blank"><i class="bi bi-facebook"></i></a></li>
+        <li><a href="https://x.com/?lang=en&mx=2" target="_blank"><i class="bi bi-twitter-x"></i></a></li>
+      </ul>
+    </div>
+  </footer>
 </div>

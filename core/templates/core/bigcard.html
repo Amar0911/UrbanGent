@@ -6,6 +6,29 @@
 
 {% block content %}
 
+<style>
+
+    @media (max-width: 992px) {
+        .col-lg-3 {
+            flex: 0 0 50%;
+            max-width: 50%;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .col-lg-3 {
+            flex: 0 0 100%;
+            max-width: 100%;
+        }
+    }
+
+    /* Button Hover Effect */
+    .btn-outline-dark:hover {
+        background-color: black !important;
+        color: white !important;
+    }
+</style>
+
 {% if messages %}
 {{messages.error}}
 {% endif %}
@@ -19,7 +42,7 @@
         
         
         <div class="col-md-6">
-            <h3 style="font-family:sans-serif; font-size: 2.5rem;">{{rf.short_d}}</h3>
+            <h3 style="font-family:fangsong; font-size: 1.7rem;">{{rf.short_d}}</h3>
             <p class="product-price">Regular Price: &#x24; {{rf.discounted_price}} (incl. of all taxes)</p>
 
             
@@ -78,7 +101,7 @@
                 
                     <div class="text-center">
                         <button type="submit" class="btn btn-outline-dark w-100"
-                            style="height: 60px; font-weight: bolder; font-size: 1.5rem; display: flex; align-items: center; justify-content: center; text-decoration: none; color: rgb(0, 0, 0);">
+                            style="height: 60px; font-weight: bolder; font-size: 1.5rem; display: flex; align-items: center; justify-content: center; gap:10px; text-decoration: none; color: rgb(0, 0, 0);">
                             Add to Cart <i class="bi bi-bag-fill"></i>
                         </button>
                     </div>
@@ -114,68 +137,69 @@
         </div>
     </div>
     <br><br>
+    
+    
+    <!--YOU MAY ALSO LIKE SECTION-->
+
     <div class="container-fluid d-flex justify-content-center align-items-center">
         <div class="text-center">
-        <h4 style="font-family: cursive;">YOU MAY ALSO LIKE</h4>
+            <h4 style="font-family: cursive;">YOU MAY ALSO LIKE</h4>
         </div>
     </div>
     <br>
     
-    <div class="container"> 
-        <div class="row justify-content-start"> 
-            <div class="col-md-3 mb-4" style="padding-left: 20px;"> 
+    <div class="container">
+        <div class="row justify-content-start">
+            <div class="col-lg-3 col-md-4 col-sm-6 col-12 mb-4">
                 <div class="card">
                     <a href="#">
-                        <img src="{% static "core/images/card1.webp" %}" alt="" class="card-img-top" height="480px" id="crd">
+                        <img src="{% static 'core/images/card1.webp' %}" alt="" class="card-img-top">
                     </a>
-                    <div class="card-body">
-                        <a href="" style="text-decoration: none;"><p style="color: black;">Light Pink Textured Polo T-Shirt</p></a>
-                        <p style="color: gray;">&#x24; 1,099</p>
-                        <a href="" style="text-decoration: none; color: darkgray;"><Pre>S     M     XL     XXL        <i class="bi bi-heart"></i></Pre></a>
+                    <div class="card-body text-center">
+                        <a href="#" class="text-dark text-decoration-none">Light Pink Textured Polo T-Shirt</a>
+                        <p class="text-muted">&#x24; 1,099</p>
                     </div>
                 </div>
             </div>
     
-            <div class="col-md-3 mb-4">
+            <div class="col-lg-3 col-md-4 col-sm-6 col-12 mb-4">
                 <div class="card">
                     <a href="#">
-                        <img src="{% static "core/images/card2.webp" %}" alt="" class="card-img-top" height="480px">
+                        <img src="{% static 'core/images/card2.webp' %}" alt="" class="card-img-top">
                     </a>
-                    <div class="card-body">
-                    <a href="" style="text-decoration: none;"><p style="color: black; text-decoration: none;">Black Textured Polo T-Shirt</p></a>
-                    <p style="color: gray;">&#x24; 1,099</p>
-                    <a href="" style="text-decoration: none; color: darkgray;"><Pre>S     M     XL     XXL        <i class="bi bi-heart"></i></Pre></a>
+                    <div class="card-body text-center">
+                        <a href="#" class="text-dark text-decoration-none">Black Textured Polo T-Shirt</a>
+                        <p class="text-muted">&#x24; 1,099</p>
                     </div>
                 </div>
             </div>
     
-            <div class="col-md-3 mb-4">
+            <div class="col-lg-3 col-md-4 col-sm-6 col-12 mb-4">
                 <div class="card">
                     <a href="#">
-                        <img src="{% static "core/images/card3.webp" %}" alt="" class="card-img-top" height="480px">
+                        <img src="{% static 'core/images/card3.webp' %}" alt="" class="card-img-top">
                     </a>
-                    <div class="card-body">
-                    <a href="" style="text-decoration: none;"><p style="color: black; text-decoration: none;">White Textured Polo T-Shirt</p></a>
-                    <p style="color: gray;">&#x24; 1,099</p>
-                    <a href="" style="text-decoration: none; color: darkgray;"><Pre>S     M     XL     XXL        <i class="bi bi-heart"></i></Pre></a>
+                    <div class="card-body text-center">
+                        <a href="#" class="text-dark text-decoration-none">White Textured Polo T-Shirt</a>
+                        <p class="text-muted">&#x24; 1,099</p>
                     </div>
                 </div>
             </div>
     
-            <div class="col-md-3 mb-4" style="padding-right: 20px;"> 
+            <div class="col-lg-3 col-md-4 col-sm-6 col-12 mb-4">
                 <div class="card">
                     <a href="#">
-                        <img src="{% static "core/images/card4.webp" %}" alt="" class="card-img-top" height="480px" id="crrd">
+                        <img src="{% static 'core/images/card4.webp' %}" alt="" class="card-img-top">
                     </a>
-                    <div class="card-body">
-                    <a href="" style="text-decoration: none;"><p style="color: black; text-decoration: none;">Navy Textured Polo T-Shirtt</p></a>
-                    <p style="color: gray;">&#x24; 1,199</p>
-                    <a href="" style="text-decoration: none; color: darkgray;"><Pre>S     M     XL     XXL        <i class="bi bi-heart"></i></Pre></a>
+                    <div class="card-body text-center">
+                        <a href="#" class="text-dark text-decoration-none">Navy Textured Polo T-Shirt</a>
+                        <p class="text-muted">&#x24; 1,199</p>
                     </div>
                 </div>
             </div>
         </div>
-    </div>    
+    </div>
+</div>    
 
 
 

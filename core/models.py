@@ -110,6 +110,7 @@ class Order(models.Model):
         STATUS_CHOICES = [
         ('PENDING', 'Pending'),
         ('PROCESSING', 'Processing'),
+        ('OUT FOR DELIVERY', 'Out for delivery'),
         ('COMPLETED', 'Completed'),
         ('CANCELLED', 'Cancelled'),
     ]
@@ -120,7 +121,7 @@ class Order(models.Model):
         quantity = models.PositiveIntegerField(default=1)
         order_at = models.DateTimeField(auto_now_add=True)
         status = models.CharField(max_length=20, choices=STATUS_CHOICES, default='PENDING')
-        order_size = models.CharField(max_length=3,default='M')
+        order_size = models.CharField(max_length=3,default=' ')
 
         def __str__(self):
              return str(self.id)

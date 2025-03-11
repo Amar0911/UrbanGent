@@ -339,6 +339,21 @@ def order(request):
     ord=Order.objects.filter(user=request.user)
     return render (request,'core/order.html',{'ord':ord})
 
+#================= Order cancel ====================
+
+def cancel_order(request, order_id):
+    order = get_object_or_404(Order, id=order_id, user=request.user)
+
+    if order.status in ['PENDING', 'PROCESSING']:  # Only allow cancellation if not yet shipped
+        order.status = 'CANCELLED'
+        order.save()
+        messages.success(request, "Your order has been cancelled successfully.")
+    else:
+        messages.error(request, "Your order cannot be cancelled at this stage.")
+
+    return redirect('index')
+
+#================== buy now ========================
 
 def buynow(request,id):
     na=new_arrival.objects.get(pk=id)
