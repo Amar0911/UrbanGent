@@ -130,6 +130,7 @@ DEFAULT_FROM_EMAIL = 'movievistafilm@gmail.com'
 STATIC_URL = 'static/'
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR/'media'
+STATIC_ROOT = BASE_DIR / 'staticfiles'
 
 
 PAYPAL_RECEIVER_EMAIL = 'UrbanGentofficial@gmail.com' # where cash is paid into i.e Merchant receiver mail
@@ -139,3 +140,6 @@ PAYPAL_TEST = True
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+
