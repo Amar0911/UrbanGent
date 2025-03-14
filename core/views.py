@@ -263,18 +263,31 @@ def showaddress(request):
 
 def checkout(request):
     if request.user.is_authenticated:
-        ca=CartUpperwear.objects.filter(user=request.user)
-        total=0
-        Delivery_charge = 149 
-        for c in ca :
-            total+=(c.product.discounted_price*c.quantity)
-            final_price = total+Delivery_charge
-        address=Userdetails.objects.filter(user=request.user)
-        return render(request, 'core/checkout.html', {'ca': ca,'total':total,'final_price':final_price,'address':address})
-    else:
-        return redirect ('login')
-    
+        ca = CartUpperwear.objects.filter(user=request.user)
+        total = sum(c.product.discounted_price * c.quantity for c in ca)
+        delivery_charge = 149
+        final_price = total + delivery_charge
+        address = Userdetails.objects.filter(user=request.user)
 
+        if request.method == "POST":
+            selected_address = request.POST.get("selected_address")
+            if not selected_address:
+                messages.error(request, "Please select an address before proceeding to payment.")
+                return redirect("checkout")  # Redirect back to checkout page
+
+            return redirect("payment")  # Proceed to payment if address is selected
+
+        return render(request, "core/checkout.html", {
+            "ca": ca,
+            "total": total,
+            "final_price": final_price,
+            "address": address,
+        })
+
+    else:
+        return redirect("login")
+    
+#============================================ Payment ======================================
 
 def payment(request):
     if request.method == 'POST':

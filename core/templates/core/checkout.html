@@ -4,8 +4,16 @@
 
 {% block content %}
 <!-- Order Summary -->
- <br>
-<div class="container d-flex justify-content-center mb-5">
+
+<style>
+
+    .order-check {
+        margin-top: 100px;
+    }
+
+</style>
+ 
+<div class="container order-check">
     <div class="card shadow p-4" style="width: 100%;">
         <h3 class="text-center mb-4">ORDER SUMMARY</h3>
         <hr>
@@ -84,19 +92,13 @@
                         
                        
                         <hr>
-                        <input type="submit" class="btn btn-outline-dark w-100" style='height:60px;font-weight: bolder; ' value="Proceed to Payment" >
-                        <br><br><br><br><br><br>
+                        <input type="submit" class="btn btn-outline-dark w-100" style='height:60px;font-weight: bolder;' 
+                        value="Proceed to Payment" {% if not address %}disabled{% endif %}>
+                                                <br><br><br><br><br><br>
                     </form> 
         
 
-     <!--
-    <div class="d-grid mt-3">
-        <a href="{% url 'payment' %}" class="btn btn-outline-dark btn-lg" style="font-weight: bolder;">
-            Proceed to Checkout <i class="bi bi-bag-fill"></i>
-        </a>      
-    </div>
-</div>
-<br>
-<br>
--->  
+    
+    
+
 {% endblock content %}
