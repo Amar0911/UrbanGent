@@ -3,6 +3,7 @@ from .forms import Registerform, Authenticateform , userchange ,AdminProfileForm
 from django.contrib.auth import authenticate, login, logout , update_session_auth_hash
 from django.contrib import messages
 from . models import new_arrival,CartUpperwear,Userdetails,Order
+from django.contrib.auth.decorators import login_required
 
 #============================= Paypal ===============================
 
@@ -261,6 +262,7 @@ def showaddress(request):
 
 ###################################  CHECKOUT PAGE ####################################
 
+
 def checkout(request):
     if request.user.is_authenticated:
         ca = CartUpperwear.objects.filter(user=request.user)
@@ -367,6 +369,8 @@ def cancel_order(request, order_id):
     return redirect('index')
 
 #================== buy now ========================
+
+@login_required(login_url='/login/') 
 
 def buynow(request,id):
     na=new_arrival.objects.get(pk=id)
